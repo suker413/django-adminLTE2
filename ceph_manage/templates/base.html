@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>{% block title %}Ceph管理平台{% endblock %}</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static "css/bootstrap.css" %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="{% static "css/AdminLTE.min.css" %}">
+    <link rel="stylesheet" href="{% static "css/skin-blue.min.css" %}">
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+
+{% include 'nav.html' %}
+{% include 'sidebar.html' %}
+
+<!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+          {% block header %}
+              <h1>
+                Page Header
+                <small>Optional description</small>
+              </h1>
+          {% endblock %}
+          {% block breadcrumb %}
+              <ol class="breadcrumb">
+                <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
+                <li class="active">Here</li>
+              </ol>
+          {% endblock %}
+        </section>
+
+        <!-- Main content -->
+        <section class="content">
+            {% block content %}
+                <p>Hello</p>
+            {% endblock %}
+        </section>
+        <!-- /.content -->
+     </div>
+      <!-- /.content-wrapper -->
+
+    {% include 'footer.html' %}
+    {% include 'control_sidebar.html' %}
+</div>
+
+{% block js_file %}
+    <script src="{% static "js/jquery-3.1.0.min.js" %}"></script>
+    <script src="{% static "js/bootstrap.min.js" %}"></script>
+    <script src="{% static "js/app.min.js" %}"></script>
+{% endblock %}
+</body>
+</html>
